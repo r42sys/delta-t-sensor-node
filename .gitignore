@@ -2,7 +2,7 @@
 .pio/
 cmake-build-*/
 
-CMakeLists.txt
-CMakeListsPrivate.txt
+/CMakeLists.txt
+/CMakeListsPrivate.txt
 
 include/config.h
