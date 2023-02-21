@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam class {
+    BackgroundColor<<Application Business Rule>> #ff6666
+    BackgroundColor<<Interface Adapter>> lightgreen
+    BackgroundColor<<Driver>> lightblue
+}
+
+interface SendSensorDataInputBoundary<<Application Business Rule>>
+interface SendSensorDataOutputBoundary<<Application Business Rule>>
+class SendSensorDataInteractor<<Application Business Rule>>
+class SendSensorDataRequest<<Application Business Rule>>
+class SendSensorDataResponse<<Application Business Rule>>
+interface SendSensorDataSensor<<Application Business Rule>>
+interface SendSensorDataMessageQueue<<Application Business Rule>>
+
+class SendSensorDataController<<Interface Adapter>>
+interface SendSensorDataDisplay<<Interface Adapter>>
+class SendSensorDataPresenter<<Interface Adapter>>
+class SendSensorDataViewModel<<Interface Adapter>>
+interface SendSensorDataView<<Interface Adapter>>
+class DisplayGateway<<Interface Adapter>>
+class MessageQueueGateway<<Interface Adapter>>
+class SensorGateway<<Interface Adapter>>
+
+class DHT22Sensor<<Driver>>
+class MQTTMessageQueue<<Driver>>
+class SSD1306Display<<Driver>>
+
+SendSensorDataController -> SendSensorDataInputBoundary
+SendSensorDataInputBoundary <|-d- SendSensorDataInteractor
+SendSensorDataInteractor -d-> SendSensorDataOutputBoundary
+SendSensorDataPresenter -|> SendSensorDataOutputBoundary
+SendSensorDataPresenter -l-> SendSensorDataViewModel
+SendSensorDataViewModel <-d- SendSensorDataView
+SendSensorDataView -d-> SendSensorDataDisplay
+SendSensorDataDisplay <|-d- DisplayGateway
+DisplayGateway <|-- SSD1306Display
+
+SendSensorDataInputBoundary -u-> SendSensorDataRequest
+SendSensorDataOutputBoundary -d-> SendSensorDataResponse
+
+SendSensorDataInteractor -> SendSensorDataSensor
+SendSensorDataSensor <|-d- SensorGateway
+SensorGateway <|-d- DHT22Sensor
+
+SendSensorDataInteractor -r-> SendSensorDataMessageQueue
+SendSensorDataMessageQueue <|-d- MessageQueueGateway
+MessageQueueGateway <|-d- MQTTMessageQueue
+
+@enduml
