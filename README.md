@@ -1,4 +1,4 @@
-# Delta T Sensor Node
+## Delta T Sensor Node
 
 This experimental project is about applying [clean architecture](https://github.com/r42sys/clean-architecture) to an IoT
 code base. Not because it's easy but because it's hard ;).
@@ -40,7 +40,23 @@ The class color code corresponds to the colors of the clean architecture layers.
 
 ![send_sensor_data_class_diagram.png](doc/send_sensor_data_class_diagram.png)
 
+## Example Deployment
+
+<!--
+- **delta-t-sensor-node** reads temperature and humidity data from a sensor and publishes the data on MQTT message queue topics
+- **delta-t-adapter** subscribes on MQTT message queue topics and forwards data via REST API
+- **delta-t-server** gets sensor data via REST API and starts/stops alarm via REST API
+- **delta-t-alarm-node** gets commands to start/stop alarms via REST API
+-->
+
+In this example the firmwares for the sensor (**delta-t-sensor-node**) and alarm (**delta-t-alarm-node**) hardware 
+components are deployed on ESP8266 microchips. The adapter (**delta-t-adapter**) and server (**delta-t-server**)
+are deployed on a Raspberry Pi.
+
+![Example Deployment](doc/example-deployment.png)
+
 ## Build
 
-Copy `include/config.h.in` to `include/config.h` and edit it to your needs. Then start the build process, e.g. by 
+Copy `include/config.h.in` to `include/config.h` and edit it to your needs. Then start the build process, e.g. by
 executing `pio run` in the project directory.
+

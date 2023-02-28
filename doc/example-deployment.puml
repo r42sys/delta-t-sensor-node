@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/deployment-diagram
+
+node "Delta T Sensor Node #1" {
+    rectangle esp8266_delta_t_sensor_node_1 as "ESP8266" {
+        artifact delta_t_sensor_node_1 as "delta-t-sensor-node"
+    }
+}
+
+node "Delta T Sensor Node #2" {
+    rectangle esp8266_delta_t_sensor_node_2 as "ESP8266" {
+        artifact delta_t_sensor_node_2 as "delta-t-sensor-node"
+    }
+}
+
+node "Delta T Sensor Node #3" {
+    rectangle esp8266_3 as "ESP8266" {
+        artifact delta_t_sensor_node_3 as "delta-t-sensor-node"
+    }
+}
+
+node raspberry_pi as "Rasperry Pi" {
+    artifact delta_t_adapter as "delta-t-adapter"
+    artifact delta_t_server as "delta-t-server"
+}
+
+node "Delta T Alarm Node #1" {
+    rectangle esp8266_delta_t_alarm_node_1 as "ESP8266" {
+        artifact delta_t_alarm_node_1 as "delta-t-alarm-node"
+    }
+}
+
+node "Delta T Alarm Node #2" {
+    rectangle esp8266_delta_t_alarm_node_2 as "ESP8266" {
+        artifact delta_t_alarm_node_2 as "delta-t-alarm-node"
+    }
+}
+
+delta_t_sensor_node_1 --> delta_t_adapter: <<protocoll>>\nMQTT
+delta_t_sensor_node_2 --> delta_t_adapter: <<protocoll>>\nMQTT
+delta_t_sensor_node_3 --> delta_t_adapter: <<protocoll>>\nMQTT
+delta_t_adapter --> delta_t_server : <<protocoll>>\nREST
+delta_t_server --> delta_t_alarm_node_1: <<protocoll>>\nREST
+delta_t_server --> delta_t_alarm_node_2: <<protocoll>>\nREST
+
+@enduml
