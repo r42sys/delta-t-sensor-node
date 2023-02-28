@@ -22,7 +22,7 @@
 #include "configuration.h"
 #include "configurator.h"
 #include "dht22_sensor.h"
-#include "send_sensor_data_action.h"
+#include "publish_sensor_data_action.h"
 #include "serial_line.h"
 #include "ssd1306_display.h"
 #include "mqtt_message_queue.h"
@@ -83,7 +83,7 @@ void loop() {
     if (!mqtt.is_connected()) {
         reconnect_to_mqtt();
     }
-    SendSensorDataAction::execute(ssd1306, dht22, mqtt);
+    PublishSensorDataAction::execute(ssd1306, dht22, mqtt);
     delay(configurator.main_loop_delay());
 }
 

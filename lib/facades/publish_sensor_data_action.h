@@ -14,21 +14,21 @@
 // limitations under the License.
 //
 
-#ifndef DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_ACTION_H
-#define DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_ACTION_H
+#ifndef DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_ACTION_H
+#define DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_ACTION_H
 
-#include "send_sensor_data_display.h"
-#include "send_sensor_data_message_queue.h"
-#include "send_sensor_data_sensor.h"
+#include "publish_sensor_data_display.h"
+#include "publish_sensor_data_message_queue.h"
+#include "publish_sensor_data_sensor.h"
 
 /**
- * @brief This class is a facade to execute the "Send Sensor Data" use case.
+ * @brief This class is a facade to execute the "Publish Sensor Data" use case.
  */
-class SendSensorDataAction {
+class PublishSensorDataAction {
 public:
 
     /**
-     * @brief Execute "Send Sensor Data" use case.
+     * @brief Execute "Publish Sensor Data" use case.
      *
      * Read relative humidity and temperature from from a given sensor, show these values on a given display
      * and send it via a given message queue to any receiver listen on it.
@@ -37,11 +37,11 @@ public:
      * @param sensor The sensor to use.
      * @param message_queue The message queue to use to publish sensor data.
      */
-    static void execute(SendSensorDataDisplay &display, SendSensorDataSensor &sensor, SendSensorDataMessageQueue &message_queue);
+    static void execute(PublishSensorDataDisplay &display, PublishSensorDataSensor &sensor, PublishSensorDataMessageQueue &message_queue);
 
 private:
-    SendSensorDataAction() = default;
-    ~SendSensorDataAction() = default;
+    PublishSensorDataAction() = default;
+    ~PublishSensorDataAction() = default;
 };
 
-#endif // DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_ACTION_H
+#endif // DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_ACTION_H

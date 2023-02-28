@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam class {
+    BackgroundColor<<Application Business Rule>> #ff6666
+    BackgroundColor<<Interface Adapter>> lightgreen
+    BackgroundColor<<Driver>> lightblue
+}
+
+interface PublishSensorDataInputBoundary<<Application Business Rule>>
+interface PublishSensorDataOutputBoundary<<Application Business Rule>>
+class PublishSensorDataInteractor<<Application Business Rule>>
+class PublishSensorDataRequest<<Application Business Rule>>
+class PublishSensorDataResponse<<Application Business Rule>>
+interface PublishSensorDataSensor<<Application Business Rule>>
+interface PublishSensorDataMessageQueue<<Application Business Rule>>
+
+class PublishSensorDataController<<Interface Adapter>>
+interface PublishSensorDataDisplay<<Interface Adapter>>
+class PublishSensorDataPresenter<<Interface Adapter>>
+class PublishSensorDataViewModel<<Interface Adapter>>
+interface PublishSensorDataView<<Interface Adapter>>
+class DisplayGateway<<Interface Adapter>>
+class MessageQueueGateway<<Interface Adapter>>
+class SensorGateway<<Interface Adapter>>
+
+class DHT22Sensor<<Driver>>
+class MQTTMessageQueue<<Driver>>
+class SSD1306Display<<Driver>>
+
+PublishSensorDataController -> PublishSensorDataInputBoundary
+PublishSensorDataInputBoundary <|-d- PublishSensorDataInteractor
+PublishSensorDataInteractor -d-> PublishSensorDataOutputBoundary
+PublishSensorDataPresenter -|> PublishSensorDataOutputBoundary
+PublishSensorDataPresenter -l-> PublishSensorDataViewModel
+PublishSensorDataViewModel <-d- PublishSensorDataView
+PublishSensorDataView -d-> PublishSensorDataDisplay
+PublishSensorDataDisplay <|-d- DisplayGateway
+DisplayGateway <|-- SSD1306Display
+
+PublishSensorDataInputBoundary -u-> PublishSensorDataRequest
+PublishSensorDataOutputBoundary -d-> PublishSensorDataResponse
+
+PublishSensorDataInteractor -> PublishSensorDataSensor
+PublishSensorDataSensor <|-d- SensorGateway
+SensorGateway <|-d- DHT22Sensor
+
+PublishSensorDataInteractor -r-> PublishSensorDataMessageQueue
+PublishSensorDataMessageQueue <|-d- MessageQueueGateway
+MessageQueueGateway <|-d- MQTTMessageQueue
+
+@enduml

@@ -14,32 +14,32 @@
 // limitations under the License.
 //
 
-#ifndef DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_CONTROLLER_H
-#define DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_CONTROLLER_H
+#ifndef DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_CONTROLLER_H
+#define DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_CONTROLLER_H
 
-#include "send_sensor_data_input_boundary.h"
+#include "publish_sensor_data_input_boundary.h"
 
 /**
- * @brief This class implements the controller to execute the "Send Sensor Data" use case.
+ * @brief This class implements the controller to execute the "Publish Sensor Data" use case.
  *
  * Please checkout [clean architecture](https://github.com/r42sys/clean-architecture) for more details on controllers.
  */
-class SendSensorDataController {
+class PublishSensorDataController {
 public:
 
     /**
-     * @param interactor "Send Sensor Data" use case implementation.
+     * @param interactor "Publish Sensor Data" use case implementation.
      */
-    explicit SendSensorDataController(SendSensorDataInputBoundary &interactor);
+    explicit PublishSensorDataController(PublishSensorDataInputBoundary &interactor);
 
     /**
-     * @brief Execute "Send Sensor Data" use case.
+     * @brief Execute "Publish Sensor Data" use case.
      */
     void execute();
 
 private:
 
-    SendSensorDataInputBoundary &_interactor;
+    PublishSensorDataInputBoundary &_interactor;
 };
 
-#endif // DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_CONTROLLER_H
+#endif // DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_CONTROLLER_H

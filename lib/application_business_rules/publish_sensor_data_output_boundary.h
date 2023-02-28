@@ -14,28 +14,28 @@
 // limitations under the License.
 //
 
-#ifndef DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_OUTPUT_BOUNDARY_H
-#define DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_OUTPUT_BOUNDARY_H
+#ifndef DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_OUTPUT_BOUNDARY_H
+#define DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_OUTPUT_BOUNDARY_H
 
-#include <send_sensor_data_response.h>
+#include <publish_sensor_data_response.h>
 
 /**
- * @brief A class representing the "Send Sensor Data" use case output boundary.
+ * @brief A class representing the "Publish Sensor Data" use case output boundary.
  *
  * Please checkout [clean architecture](https://github.com/r42sys/clean-architecture) for more details on output
  * boundaries.
  */
-class SendSensorDataOutputBoundary {
+class PublishSensorDataOutputBoundary {
 public:
 
-    virtual ~SendSensorDataOutputBoundary() = default;
+    virtual ~PublishSensorDataOutputBoundary() = default;
 
     /**
-     * @brief Present the "Send Sensor Data" use case response.
-     * @param response The "Send Sensor Data" response.
+     * @brief Present the "Publish Sensor Data" use case response.
+     * @param response The "Publish Sensor Data" response.
      */
-    virtual void present(SendSensorDataResponse &response) = 0;
+    virtual void present(PublishSensorDataResponse &response) = 0;
 };
 
 
-#endif // DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_OUTPUT_BOUNDARY_H
+#endif // DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_OUTPUT_BOUNDARY_H

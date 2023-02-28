@@ -14,16 +14,16 @@
 // limitations under the License.
 //
 
-#ifndef DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_MESSAGE_QUEUE_H
-#define DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_MESSAGE_QUEUE_H
+#ifndef DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_MESSAGE_QUEUE_H
+#define DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_MESSAGE_QUEUE_H
 
 /**
- * @brief This class defines the message queue interface for the "Send Sensor Data" use case.
+ * @brief This class defines the message queue interface for the "Publish Sensor Data" use case.
  */
-class SendSensorDataMessageQueue {
+class PublishSensorDataMessageQueue {
 public:
 
-    virtual ~SendSensorDataMessageQueue() = default;
+    virtual ~PublishSensorDataMessageQueue() = default;
 
     /**
      * Publish a give relative humidity.
@@ -41,4 +41,4 @@ public:
 };
 
 
-#endif // DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_MESSAGE_QUEUE_H
+#endif // DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_MESSAGE_QUEUE_H

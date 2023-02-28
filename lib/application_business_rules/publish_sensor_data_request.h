@@ -14,23 +14,15 @@
 // limitations under the License.
 //
 
-#ifndef DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_VIEW_MODEL_H
-#define DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_VIEW_MODEL_H
-
-#include <string>
+#ifndef DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_REQUEST_H
+#define DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_REQUEST_H
 
 /**
- * @brief This data structure implements the view model for the "Send Sensor Data" use case.
+ * @brief This data structure implements the "Publish Sensor Data" use case request.
  *
- * Please checkout [clean architecture](https://github.com/r42sys/clean-architecture) for more details on view models.
+ * Please checkout [clean architecture](https://github.com/r42sys/clean-architecture) for more details on requests.
  */
-struct SendSensorDataViewModel {
-
-    /// Relative humidity [%].
-    std::string relative_humidity;
-
-    /// Temperature [°C].
-    std::string temperature;
+struct PublishSensorDataRequest {
 };
 
-#endif // DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_VIEW_MODEL_H
+#endif // DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_REQUEST_H

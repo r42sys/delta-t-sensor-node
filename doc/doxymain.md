@@ -12,7 +12,7 @@ shows the data on the display and publishes the data via MQTT on a temperature a
 
 **lib/facades**
 
-Convenience code to execute the "Send Sensor Data" use-case.
+Convenience code to execute the "Publish Sensor Data" use-case.
 
 **lib/drivers**
 
@@ -21,8 +21,8 @@ network interface.
 
 **lib/interface_adapters**
 
-Code for "Send Sensor Data" presenter, view-model, and controller plus gateway APIs.
+Code for "Publish Sensor Data" presenter, view-model, and controller plus gateway APIs.
 
 **lib/application_business_rules**
 
-Code for "Send Sensor Data" interactor.
+Code for "Publish Sensor Data" interactor.

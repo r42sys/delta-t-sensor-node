@@ -17,14 +17,14 @@
 #ifndef DELTA_T_SENSOR_NODE_DISPLAY_GATEWAY_H
 #define DELTA_T_SENSOR_NODE_DISPLAY_GATEWAY_H
 
-#include "send_sensor_data_display.h"
+#include "publish_sensor_data_display.h"
 
 /**
  * @brief This class defines the display gateway interface.
  *
  * Please checkout [clean architecture](https://github.com/r42sys/clean-architecture) for more details on gateways.
  * */
-class DisplayGateway : public SendSensorDataDisplay {
+class DisplayGateway : public PublishSensorDataDisplay {
 };
 
 #endif // DELTA_T_SENSOR_NODE_DISPLAY_GATEWAY_H

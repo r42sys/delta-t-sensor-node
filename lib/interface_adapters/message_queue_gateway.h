@@ -17,14 +17,14 @@
 #ifndef DELTA_T_SENSOR_NODE_MESSAGE_QUEUE_GATEWAY_H
 #define DELTA_T_SENSOR_NODE_MESSAGE_QUEUE_GATEWAY_H
 
-#include "send_sensor_data_message_queue.h"
+#include "publish_sensor_data_message_queue.h"
 
 /**
  * @brief This class defines the message queue gateway interface.
  *
  * Please checkout [clean architecture](https://github.com/r42sys/clean-architecture) for more details on gateways.
  */
-class MessageQueueGateway : public SendSensorDataMessageQueue {
+class MessageQueueGateway : public PublishSensorDataMessageQueue {
 };
 
 

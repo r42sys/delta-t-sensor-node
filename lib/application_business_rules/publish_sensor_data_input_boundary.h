@@ -14,27 +14,27 @@
 // limitations under the License.
 //
 
-#ifndef DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_INPUT_BOUNDARY_H
-#define DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_INPUT_BOUNDARY_H
+#ifndef DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_INPUT_BOUNDARY_H
+#define DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_INPUT_BOUNDARY_H
 
-#include <send_sensor_data_request.h>
+#include <publish_sensor_data_request.h>
 
 /**
- * @brief This class defines the "Send Sensor Data" use case input boundary.
+ * @brief This class defines the "Publish Sensor Data" use case input boundary.
  *
  * Please checkout [clean architecture](https://github.com/r42sys/clean-architecture) for more details on input
  * boundaries.
  */
-class SendSensorDataInputBoundary {
+class PublishSensorDataInputBoundary {
 public:
 
-    virtual ~SendSensorDataInputBoundary() = default;
+    virtual ~PublishSensorDataInputBoundary() = default;
 
     /**
-     * @brief Execute the "Send Sensor Data" use case request.
-     * @param request The "Send Sensor Data" request.
+     * @brief Execute the "Publish Sensor Data" use case request.
+     * @param request The "Publish Sensor Data" request.
      */
-    virtual void execute(SendSensorDataRequest &request) = 0;
+    virtual void execute(PublishSensorDataRequest &request) = 0;
 };
 
-#endif // DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_INPUT_BOUNDARY_H
+#endif // DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_INPUT_BOUNDARY_H

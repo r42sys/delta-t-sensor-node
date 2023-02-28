@@ -14,21 +14,21 @@
 // limitations under the License.
 //
 
-#include "send_sensor_data_interactor.h"
+#include "publish_sensor_data_interactor.h"
 
-SendSensorDataInteractor::SendSensorDataInteractor(SendSensorDataOutputBoundary &presenter, SendSensorDataSensor &sensor, SendSensorDataMessageQueue &message_queue)
+PublishSensorDataInteractor::PublishSensorDataInteractor(PublishSensorDataOutputBoundary &presenter, PublishSensorDataSensor &sensor, PublishSensorDataMessageQueue &message_queue)
     : _message_queue(message_queue), _presenter(presenter), _sensor(sensor)
 {};
 
 void
-SendSensorDataInteractor::execute(SendSensorDataRequest &request) {
+PublishSensorDataInteractor::execute(PublishSensorDataRequest &request) {
     float relative_humidity = _sensor.relative_humidity();
     float temperature = _sensor.temperature();
 
     _message_queue.publish_relative_humidity(relative_humidity);
     _message_queue.publish_temperature(temperature);
 
-    SendSensorDataResponse response = {
+    PublishSensorDataResponse response = {
         .relative_humidity = relative_humidity,
         .temperature = temperature
     };

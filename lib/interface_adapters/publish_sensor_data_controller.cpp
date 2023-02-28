@@ -14,8 +14,14 @@
 // limitations under the License.
 //
 
-//
-// Created by r42sys on 01.02.23.
-//
+#include "publish_sensor_data_controller.h"
+#include "publish_sensor_data_request.h"
 
-#include "send_sensor_data_input_boundary.h"
+PublishSensorDataController::PublishSensorDataController(PublishSensorDataInputBoundary &interactor)
+    : _interactor(interactor)
+{}
+
+void PublishSensorDataController::execute() {
+    PublishSensorDataRequest request;
+    _interactor.execute(request);
+}

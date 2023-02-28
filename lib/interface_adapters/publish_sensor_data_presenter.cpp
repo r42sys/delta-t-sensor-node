@@ -17,20 +17,20 @@
 #include <iomanip>
 #include <sstream>
 
-#include "send_sensor_data_presenter.h"
+#include "publish_sensor_data_presenter.h"
 
-SendSensorDataPresenter::SendSensorDataPresenter(SendSensorDataView &view)
+PublishSensorDataPresenter::PublishSensorDataPresenter(PublishSensorDataView &view)
     : _view(view)
 {}
 
-void SendSensorDataPresenter::present(SendSensorDataResponse &response) {
+void PublishSensorDataPresenter::present(PublishSensorDataResponse &response) {
     std::stringstream relative_humidity;
     relative_humidity << std::fixed << std::setprecision(1) << response.relative_humidity;
 
     std::stringstream temperature;
     temperature << std::fixed << std::setprecision(1) << response.temperature;
 
-    SendSensorDataViewModel view_model = {
+    PublishSensorDataViewModel view_model = {
         .relative_humidity = relative_humidity.str(),
         .temperature = temperature.str()
     };

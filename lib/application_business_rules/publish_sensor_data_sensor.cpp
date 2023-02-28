@@ -14,21 +14,4 @@
 // limitations under the License.
 //
 
-#ifndef DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_RESPONSE_H
-#define DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_RESPONSE_H
-
-/**
- * @brief This data structure implements the "Send Sensor Data" use case response.
- *
- * Please checkout [clean architecture](https://github.com/r42sys/clean-architecture) for more details on responses.
- */
-struct SendSensorDataResponse {
-
-    /// Relative humidity [%].
-    float relative_humidity;
-
-    /// Temperature [°C].
-    float temperature;
-};
-
-#endif // DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_RESPONSE_H
+#include "publish_sensor_data_sensor.h"

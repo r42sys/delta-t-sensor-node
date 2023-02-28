@@ -17,14 +17,14 @@
 #ifndef DELTA_T_SENSOR_NODE_SENSOR_GATEWAY_H
 #define DELTA_T_SENSOR_NODE_SENSOR_GATEWAY_H
 
-#include "send_sensor_data_sensor.h"
+#include "publish_sensor_data_sensor.h"
 
 /**
  * @brief This class defines the sensor gateway interface.
  *
  * Please checkout [clean architecture](https://github.com/r42sys/clean-architecture) for more details on gateways.
  */
-class SensorGateway : public SendSensorDataSensor {
+class SensorGateway : public PublishSensorDataSensor {
 };
 
 #endif // DELTA_T_SENSOR_NODE_SENSOR_GATEWAY_H

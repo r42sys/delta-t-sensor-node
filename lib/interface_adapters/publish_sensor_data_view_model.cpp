@@ -14,4 +14,4 @@
 // limitations under the License.
 //
 
-#include "send_sensor_data_display.h"
+#include "publish_sensor_data_view_model.h"

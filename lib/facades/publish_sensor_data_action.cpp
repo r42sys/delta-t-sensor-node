@@ -14,17 +14,17 @@
 // limitations under the License.
 //
 
-#include <send_sensor_data_action.h>
-#include "send_sensor_data_controller.h"
-#include "send_sensor_data_interactor.h"
-#include "send_sensor_data_presenter.h"
-#include "send_sensor_data_sensor.h"
-#include "send_sensor_data_view.h"
+#include <publish_sensor_data_action.h>
+#include "publish_sensor_data_controller.h"
+#include "publish_sensor_data_interactor.h"
+#include "publish_sensor_data_presenter.h"
+#include "publish_sensor_data_sensor.h"
+#include "publish_sensor_data_view.h"
 
-void SendSensorDataAction::execute(SendSensorDataDisplay &display, SendSensorDataSensor &sensor, SendSensorDataMessageQueue &message_queue) {
-    SendSensorDataView view(display);
-    SendSensorDataPresenter presenter(view);
-    SendSensorDataInteractor interactor(presenter, sensor, message_queue);
-    SendSensorDataController controller(interactor);
+void PublishSensorDataAction::execute(PublishSensorDataDisplay &display, PublishSensorDataSensor &sensor, PublishSensorDataMessageQueue &message_queue) {
+    PublishSensorDataView view(display);
+    PublishSensorDataPresenter presenter(view);
+    PublishSensorDataInteractor interactor(presenter, sensor, message_queue);
+    PublishSensorDataController controller(interactor);
     controller.execute();
 }

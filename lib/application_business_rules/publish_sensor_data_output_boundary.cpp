@@ -14,4 +14,4 @@
 // limitations under the License.
 //
 
-#include "send_sensor_data_request.h"
+#include "publish_sensor_data_output_boundary.h"

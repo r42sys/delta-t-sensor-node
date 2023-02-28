@@ -14,14 +14,4 @@
 // limitations under the License.
 //
 
-#include "send_sensor_data_controller.h"
-#include "send_sensor_data_request.h"
-
-SendSensorDataController::SendSensorDataController(SendSensorDataInputBoundary &interactor)
-    : _interactor(interactor)
-{}
-
-void SendSensorDataController::execute() {
-    SendSensorDataRequest request;
-    _interactor.execute(request);
-}
+#include "publish_sensor_data_response.h"

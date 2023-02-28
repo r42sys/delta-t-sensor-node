@@ -14,13 +14,13 @@
 // limitations under the License.
 //
 
-#include "send_sensor_data_view.h"
+#include "publish_sensor_data_view.h"
 
-SendSensorDataView::SendSensorDataView(SendSensorDataDisplay &display)
+PublishSensorDataView::PublishSensorDataView(PublishSensorDataDisplay &display)
     : _display(display)
 {}
 
-void SendSensorDataView::render(SendSensorDataViewModel &view_model) {
+void PublishSensorDataView::render(PublishSensorDataViewModel &view_model) {
     _display.clear();
     _display.print("Temperature: ");
     _display.print(view_model.temperature);

@@ -16,7 +16,7 @@ shows the data on the display and publishes the data via MQTT on a temperature a
 
 **lib/facades**
 
-Convenience code to execute the "Send Sensor Data" use-case.
+Convenience code to execute the "Publish Sensor Data" use-case.
 
 **lib/drivers**
 
@@ -25,12 +25,12 @@ network interface (blue layer in the clean architecture figure).
 
 **lib/interface_adapters**
 
-Code for "Send Sensor Data" presenter, view-model, and controller (green layer in the clean architecture figure) and 
+Code for "Publish Sensor Data" presenter, view-model, and controller (green layer in the clean architecture figure) and 
 gateway APIs.
 
 **lib/application_business_rules**
 
-Code for "Send Sensor Data" interactor (red layer in the clean architecture figure).
+Code for "Publish Sensor Data" interactor (red layer in the clean architecture figure).
 
 Actually there are no enterprise business rules.
 
@@ -38,7 +38,7 @@ Actually there are no enterprise business rules.
 
 The class color code corresponds to the colors of the clean architecture layers.
 
-![send_sensor_data_class_diagram.png](doc/send_sensor_data_class_diagram.png)
+![send_sensor_data_class_diagram.png](doc/publish_sensor_data_class_diagram.png)
 
 ## Example Deployment
 

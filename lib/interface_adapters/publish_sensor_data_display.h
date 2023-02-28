@@ -14,18 +14,18 @@
 // limitations under the License.
 //
 
-#ifndef DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_DISPLAY_H
-#define DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_DISPLAY_H
+#ifndef DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_DISPLAY_H
+#define DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_DISPLAY_H
 
 #include <string>
 
 /**
- * @brief This class defines the display interface for the "Send Sensor Data" use case.
+ * @brief This class defines the display interface for the "Publish Sensor Data" use case.
  */
-class SendSensorDataDisplay {
+class PublishSensorDataDisplay {
 public:
 
-    virtual ~SendSensorDataDisplay() = default;
+    virtual ~PublishSensorDataDisplay() = default;
 
     /**
      * @brief Clear the display and set cursor to (0, 0) position. The display is not updated unless the
@@ -75,4 +75,4 @@ public:
     virtual void update() = 0;
 };
 
-#endif // DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_DISPLAY_H
+#endif // DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_DISPLAY_H

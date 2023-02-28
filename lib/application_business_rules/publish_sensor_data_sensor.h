@@ -14,16 +14,16 @@
 // limitations under the License.
 //
 
-#ifndef DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_SENSOR_H
-#define DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_SENSOR_H
+#ifndef DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_SENSOR_H
+#define DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_SENSOR_H
 
 /**
- * @brief This class defines the "Send Sensor Data" sensor interface.
+ * @brief This class defines the "Publish Sensor Data" sensor interface.
  */
-class SendSensorDataSensor {
+class PublishSensorDataSensor {
 public:
 
-    virtual ~SendSensorDataSensor() = default;
+    virtual ~PublishSensorDataSensor() = default;
 
     /**
      * Read the actual relative humidity [%] from sensor.
@@ -38,4 +38,4 @@ public:
     virtual float temperature() = 0;
 };
 
-#endif //DELTA_T_SENSOR_NODE_SEND_SENSOR_DATA_SENSOR_H
+#endif //DELTA_T_SENSOR_NODE_PUBLISH_SENSOR_DATA_SENSOR_H
