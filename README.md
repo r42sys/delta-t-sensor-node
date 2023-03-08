@@ -43,12 +43,12 @@ The class color code corresponds to the colors of the clean architecture layers.
 ## Example Deployment
 
 In this example the [Delta T Sensor Node][delta-t-sensor-node] (**delta-t-sensor-node**) and 
-Dekta T Alarm Node (**delta-t-alarm-node**) firmwares are deployed on ESP8266 microchips. The Delta T Adapter 
-(**delta-t-adapter**) and the Delta T Server (**delta-t-server**) component are deployed on a Raspberry Pi, where the
+Dekta T Alarm Node (**delta-t-alarm-node**) firmwares are deployed on ESP8266 microchips. The Delta T Collector 
+(**delta-t-collector**) and the Delta T Server (**delta-t-server**) components are deployed on a Raspberry Pi, where the
 
 - **delta-t-sensor-node** firmware reads temperature and humidity data from a DHT22 sensor and publishes the data on 
   MQTT message queue topics
-- **delta-t-adapter** component subscribes on MQTT message queue topics and forwards the received data via REST API
+- **delta-t-collector** component subscribes on MQTT message queue topics, collects data and forwards them via REST API
 - **delta-t-server** component gets sensor data via REST API and starts/stops alarm via REST API
 - **delta-t-alarm-node** firmware gets commands to start/stop alarms via REST API
 
@@ -59,7 +59,7 @@ Dekta T Alarm Node (**delta-t-alarm-node**) firmwares are deployed on ESP8266 mi
 Copy `include/config.h.in` to `include/config.h` and edit it to your needs. Then start the build process, e.g. by
 executing `pio run` in the project directory.
 
-[delta-t-adapter]: <https://github.com/r42sys/delta-t-adapter>
+[delta-t-collector]: <https://github.com/r42sys/delta-t-collector>
 [delta-t-alarm-node]: <https://github.com/r42sys/delta-t-alarm-node>
 [delta-t-sensor-node]: <https://github.com/r42sys/delta-t-sensor-node>
 [delta-t-server]: <https://github.com/r42sys/delta-t-server>

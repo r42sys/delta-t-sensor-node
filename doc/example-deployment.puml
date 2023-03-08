@@ -20,7 +20,7 @@ node "Delta T Sensor Node #3" {
 }
 
 node raspberry_pi as "Rasperry Pi" {
-    artifact delta_t_adapter as "delta-t-adapter"
+    artifact delta_t_collector as "delta-t-collector"
     artifact delta_t_server as "delta-t-server"
 }
 
@@ -36,10 +36,10 @@ node "Delta T Alarm Node #2" {
     }
 }
 
-delta_t_sensor_node_1 --> delta_t_adapter: <<protocoll>>\nMQTT
-delta_t_sensor_node_2 --> delta_t_adapter: <<protocoll>>\nMQTT
-delta_t_sensor_node_3 --> delta_t_adapter: <<protocoll>>\nMQTT
-delta_t_adapter --> delta_t_server : <<protocoll>>\nREST
+delta_t_sensor_node_1 --> delta_t_collector: <<protocoll>>\nMQTT
+delta_t_sensor_node_2 --> delta_t_collector: <<protocoll>>\nMQTT
+delta_t_sensor_node_3 --> delta_t_collector: <<protocoll>>\nMQTT
+delta_t_collector --> delta_t_server : <<protocoll>>\nREST
 delta_t_server --> delta_t_alarm_node_1: <<protocoll>>\nREST
 delta_t_server --> delta_t_alarm_node_2: <<protocoll>>\nREST
 
